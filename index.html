@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inp1" placeholder="Enter Your Name">
+    <input type="text" id="inp2" placeholder="Enter Your E-mail">
+    <button>click me</button>
+
+
+    <table border="">
+
+    </table>
+
+
+
+    <script>
+
+        let input1 = document.getElementById("inp1");
+        let input2 = document.getElementById("inp2");
+        let btn = document.querySelector("button");
+        let table = document.querySelector("table");
+
+        // console.log(table.innerHTML.includes("tr"))
+        btn.onclick = () => {
+            if (!table.innerHTML.includes("th")) {
+                let tr = document.createElement("tr")
+                table.appendChild(tr)
+
+                let th1 = document.createElement("th")
+                th1.innerHTML = "Name"
+                tr.appendChild(th1)
+                let th2 = document.createElement("th")
+                th2.innerHTML = "Email"
+                tr.appendChild(th2)
+            }
+
+
+            let createTr = document.createElement("tr")
+            table.appendChild(createTr)
+            let name = document.createElement("td")
+            name.innerHTML = input1.value
+            let email = document.createElement("td")
+            email.innerHTML = input2.value
+
+            createTr.appendChild(name)
+            createTr.appendChild(email)
+
+
+
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>
